@@ -7,7 +7,13 @@
 <meta name="description" content="Авторский курс Full Set Master с нуля, повышение квалификации и маникюр в Ташкенте. Бесплатный пробный урок. Есть рассрочка.">
 <meta property="og:title" content="Дарья Дружинина — Nail Education">
 <meta property="og:description" content="Курс Full Set Master с нуля, повышение квалификации, маникюр и наращивание. Бесплатный пробный урок.">
-<meta property="og:image" content="img/nails.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://casper101011.github.io/darya-nails/">
+<meta property="og:image" content="https://casper101011.github.io/darya-nails/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0a09'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23d9b88f'%3E%D0%94%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0d0a09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,11 +113,11 @@ h3{font-size:26px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .hero-note{margin-top:14px;font-size:13px;color:var(--muted)}
 .hero-note b{color:var(--gold);font-weight:500}
-.photo{position:relative;justify-self:center;width:100%;max-width:380px}
+.photo{position:relative;justify-self:center;width:100%;max-width:380px;container-type:inline-size}
 .photo .frame{border-radius:200px 200px 22px 22px;overflow:hidden;border:1px solid var(--line-2);aspect-ratio:3/4;background:var(--card)}
 .photo .frame img{width:100%;height:100%;object-fit:cover}
 .photo::before{content:"";position:absolute;inset:-12px;border-radius:212px 212px 30px 30px;border:1px solid var(--line);pointer-events:none}
-.photo .sign{position:absolute;left:-18px;bottom:22px;font-family:var(--script);font-size:54px;color:var(--gold);line-height:1;text-shadow:0 4px 18px rgba(0,0,0,.7);transform:rotate(-8deg)}
+.photo .sign{position:absolute;left:-4%;bottom:5%;white-space:nowrap;font-family:var(--script);font-size:44px;font-size:14.5cqw;color:var(--gold);line-height:1;text-shadow:0 2px 6px rgba(0,0,0,.85),0 6px 22px rgba(0,0,0,.75);transform:rotate(-10deg);transform-origin:0 100%;pointer-events:none}
 .photo .cap{position:absolute;right:-6px;bottom:-18px;background:var(--bg);border:1px solid var(--line-2);border-radius:99px;padding:8px 16px;font-size:12px;letter-spacing:.06em;color:var(--gold)}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:56px}
@@ -308,7 +314,6 @@ h3{font-size:26px}
   .instal h3{font-size:30px}
   .faq summary{font-size:20px}
   .copy{flex-direction:column;align-items:flex-start}
-  .photo .sign{left:-4px;font-size:46px}
   .photo .cap{right:0}
   .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(13,10,9,.96) 30%)}
   .sticky .btn{width:100%;padding:16px}
@@ -365,7 +370,7 @@ h3{font-size:26px}
         </div>
         <div class="photo">
           <div class="frame"><img src="img/darya.jpg" alt="Дарья Дружинина — преподаватель курса Full Set Master"></div>
-          <div class="sign">Darya</div>
+          <div class="sign">Дарья Дружинина</div>
           <div class="cap">Ваш преподаватель и наставник</div>
         </div>
       </div>
@@ -385,7 +390,7 @@ h3{font-size:26px}
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
       <div>
         <h3>Есть рассрочка</h3>
-        <p>Обучение можно оплатить частями. Удобный вариант подберём индивидуально — обсудим на пробном уроке.</p>
+        <p>Обучение можно оплатить частями. Удобный вариант подберу индивидуально — обсудим на пробном уроке.</p>
       </div>
       <a class="btn btn-gold btn-sm" data-tg="instal" target="_blank" rel="noopener">Узнать про рассрочку</a>
     </div>
@@ -552,6 +557,7 @@ h3{font-size:26px}
             <li>Теория</li>
             <li>Схемы</li>
             <li>Практика</li>
+            <li>Все инструменты и расходники предоставляются</li>
           </ul>
           <div class="price">4 000 000<small>сум</small></div>
           <a class="btn btn-line btn-sm" data-tg="trial" data-course="Нижние формы" target="_blank" rel="noopener">Записаться на пробный урок</a>
@@ -597,7 +603,7 @@ h3{font-size:26px}
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>
             Записаться в Telegram
           </a>
-          <p class="hint">Ответим в течение дня</p>
+          <p class="hint">Сообщение придёт Дарье лично в Telegram</p>
         </div>
       </div>
     </div>
@@ -608,7 +614,7 @@ h3{font-size:26px}
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">Вопросы</span><h2>Частые вопросы</h2></div>
       <div class="faq">
-        <details><summary>Можно прийти совсем без опыта?</summary><p>Да. Full Set Master и короткие курсы для новичков рассчитаны на старт с нуля — научим всему с первого урока.</p></details>
+        <details><summary>Можно прийти совсем без опыта?</summary><p>Да. Full Set Master и короткие курсы для новичков рассчитаны на старт с нуля — научу всему с первого урока.</p></details>
         <details><summary>Сколько длится обучение?</summary><p>Full Set Master — 3 недели: 9 основных и 9 дополнительных уроков для отработки техник. Короткие курсы — от 3 до 5 дней.</p></details>
         <details><summary>Чем Premium отличается от Student?</summary><p>Программа, преподаватель и сертификаты одинаковые. В Premium все материалы и формы уже включены. В Student стол, аппарат и лампа — от студии, а расходники и инструмент ученица покупает сама.</p></details>
         <details><summary>Как оплатить и есть ли рассрочка?</summary><p>Оплата любым способом — в первый день курса после подписания договора. Есть рассрочка: удобный вариант обсудим лично на пробном уроке.</p></details>
@@ -644,7 +650,7 @@ h3{font-size:26px}
         </div>
         <div class="photo">
           <div class="frame"><img src="img/nails.jpg" alt="Работа Дарьи Дружининой — наращивание с лепкой"></div>
-          <div class="sign">Darya</div>
+          <div class="sign">Дарья Дружинина</div>
           <div class="cap">Судья чемпионатов</div>
         </div>
       </div>
@@ -693,6 +699,7 @@ h3{font-size:26px}
             <li>Теория</li>
             <li>Схемы</li>
             <li>Практика</li>
+            <li>Все инструменты и расходники предоставляются</li>
           </ul>
           <div class="price">4 000 000<small>сум</small></div>
           <a class="btn btn-gold btn-sm" data-tg="master" data-course="Нижние формы" target="_blank" rel="noopener">Узнать даты</a>
@@ -707,7 +714,7 @@ h3{font-size:26px}
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
       <div>
         <h3>Есть рассрочка</h3>
-        <p>Любой курс можно оплатить частями. Удобный вариант подберём индивидуально.</p>
+        <p>Любой курс можно оплатить частями. Удобный вариант подберу индивидуально.</p>
       </div>
       <a class="btn btn-gold btn-sm" data-tg="instal" target="_blank" rel="noopener">Узнать про рассрочку</a>
     </div>
@@ -737,7 +744,7 @@ h3{font-size:26px}
     <div class="wrap">
       <span class="eyebrow">Ближайшие потоки</span>
       <h2>Узнайте даты и забронируйте место</h2>
-      <p>Группы небольшие, места заканчиваются быстро. Напишите — пришлю расписание ближайших интенсивов.</p>
+      <p>Группы небольшие. Напишите — пришлю расписание ближайших интенсивов.</p>
       <a class="btn btn-gold" data-tg="master" target="_blank" rel="noopener">Написать в Telegram</a>
     </div>
   </section>
@@ -767,7 +774,7 @@ h3{font-size:26px}
         </div>
         <div class="photo">
           <div class="frame"><img src="img/nails.jpg" alt="Наращивание ногтей с объёмным дизайном"></div>
-          <div class="sign">Darya</div>
+          <div class="sign">Дарья Дружинина</div>
           <div class="cap">Ташкент, Чиланзар</div>
         </div>
       </div>
@@ -864,16 +871,8 @@ h3{font-size:26px}
   var TG = 'DrujininaDarya';
   var HELLO = 'Здравствуйте, Дарья! ';
 
-  /* Метка рекламы: ссылка вида site/?r=R1#obuchenie → в конце сообщения будет «#R1» */
-  var ref = '';
-  try {
-    var q = new URLSearchParams(location.search);
-    ref = (q.get('r') || q.get('utm_content') || '').replace(/[^\w-]/g,'').slice(0,20);
-    if (ref) sessionStorage.setItem('ref', ref); else ref = sessionStorage.getItem('ref') || '';
-  } catch(e){}
-
   function link(msg){
-    return 'https://t.me/' + TG + '?text=' + encodeURIComponent(HELLO + msg + (ref ? ' #' + ref : ''));
+    return 'https://t.me/' + TG + '?text=' + encodeURIComponent(HELLO + msg);
   }
 
   var MSG = {
@@ -887,7 +886,7 @@ h3{font-size:26px}
                         : 'Я мастер, интересует повышение квалификации. Когда ближайшие потоки?'; },
     nails:   function(el){ var s = el && el.dataset.service;
                return s ? 'Хочу записаться на ' + s + '. Когда есть свободные окошки?'
-                        : 'Хочу записаться на ноготочки. Когда есть свободные окошки?'; }
+                        : 'Хочу записаться на маникюр. Когда есть свободные окошки?'; }
   };
 
   function track(name){
