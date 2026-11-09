@@ -19,19 +19,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!--
-  META PIXEL: вставить код пикселя сюда, заменив PIXEL_ID.
-  Клик по любой кнопке Telegram отправляет событие Contact (см. функцию track внизу).
-
+<!-- META PIXEL «Дарья Дружинина — сайт». Клик по любой кнопке Telegram = событие Contact (функция track внизу). -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','PIXEL_ID');fbq('track','PageView');
+fbq('init','2167732887283513');fbq('track','PageView');
 </script>
--->
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2167732887283513&ev=PageView&noscript=1"></noscript>
 
 <style>
 :root{
@@ -1026,14 +1023,19 @@ h3{font-size:26px}
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('on'); });
 
-  function track(name){
-    try { if (window.fbq) fbq('track', 'Contact', { content_name: name }); } catch(e){}
+  /* ---------- статистика: Meta Pixel + Яндекс Метрика ---------- */
+  var YM_ID = 0; /* номер счётчика Метрики — вставить, когда будет */
+  var LABEL = { trial:'Пробный урок', instal:'Рассрочка', master:'Повышение квалификации', nails:'Маникюр: свободные окошки', general:'Вопрос в Telegram' };
+  function track(goal, detail){
+    var name = (LABEL[goal] || goal) + (detail ? ' — ' + detail : '');
+    try { if (window.fbq) fbq('track', 'Contact', { content_name: name, content_category: LABEL[goal] || goal }); } catch(e){}
+    try { if (YM_ID && window.ym) { ym(YM_ID, 'reachGoal', 'tg_click', { 'Кнопка': name }); ym(YM_ID, 'reachGoal', goal); } } catch(e){}
   }
 
   document.querySelectorAll('[data-tg]').forEach(function(el){
     var type = el.dataset.tg;
     el.href = link(MSG[type](el));
-    el.addEventListener('click', function(){ track(type + (el.dataset.course ? ': ' + el.dataset.course : '') + (el.dataset.service ? ': ' + el.dataset.service : '')); });
+    el.addEventListener('click', function(){ track(type, el.dataset.course || el.dataset.service || ''); });
   });
 
   /* ---------- запись на пробный урок: день + курс ---------- */
@@ -1051,7 +1053,7 @@ h3{font-size:26px}
     });
   });
   courseSel.addEventListener('change', updateBook);
-  bookBtn.addEventListener('click', function(){ track('trial: форма'); });
+  bookBtn.addEventListener('click', function(){ track('trial', 'форма записи' + (day ? ', ' + day : '') + (courseSel.value ? ', ' + courseSel.value : '')); });
   updateBook();
 
   /* ---------- вкладки ---------- */
@@ -1062,6 +1064,7 @@ h3{font-size:26px}
     master:    ['Узнать даты потока', MSG.master()],
     manikur:   ['Узнать свободные окошки', MSG.nails()]
   };
+  var STICKY_GOAL = { obuchenie:'trial', master:'master', manikur:'nails' };
   function show(id, scroll){
     if (TABS.indexOf(id) < 0) id = 'obuchenie';
     TABS.forEach(function(t){
@@ -1070,7 +1073,7 @@ h3{font-size:26px}
     });
     sticky.textContent = STICKY[id][0];
     sticky.href = link(STICKY[id][1]);
-    sticky.onclick = function(){ track('sticky: ' + id); };
+    sticky.onclick = function(){ track(STICKY_GOAL[id], 'нижняя кнопка'); };
     if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   function fromHash(){
